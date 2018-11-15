@@ -1,11 +1,12 @@
 import React from "react";
 
-import { storiesOf } from "@storybook/react";
+import { storiesOf, addDecorator } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
+import { withViewport } from '@storybook/addon-viewport';
 
 import { Button, Welcome } from "@storybook/react/demo";
-import ExampleComponent from "uph-contents";
+import { Text } from "uph-contents";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -23,6 +24,5 @@ storiesOf("Button", module)
     </Button>
   ));
 
-storiesOf("First Content", module).add("with text", () => (
-  <ExampleComponent text="Modern React component module" />
-));
+storiesOf("Text Content", module)
+.add("compact", () => <Text />)
